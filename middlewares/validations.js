@@ -4,7 +4,7 @@ const accounts = async (req, res, next) =>{
     const {name, account} = req.body;
     const data = await store.query('user',name)
 
-    if (data) {
+    if (data[0]) {
         return res.status(400).json({ 
             account,
             violations: ["account-already-initialized"]});
