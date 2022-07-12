@@ -4,14 +4,11 @@ const store = require('../../store/dummy')
 
 const newAccount = async(req, res = response) =>{
 
-   const {name} = req.body;
+   const {name,account} = req.body;
 
    let datos = {
         name,
-        account: {
-            'active-card': true, 
-            'available-limit': 100
-        }
+        account
    }
 
     store.insert('user',datos);
