@@ -1,9 +1,9 @@
 const db = {
     'user': [
-        { name: 'Carlos', account: {'active-card': true, 'available-limit': 100} }
+        
     ],
     'transaction': [
-        { name: 'Carlos', transaction: {merchant: "Burger King", amount: 20, time: "2022-07-12T09:50:00.000Z"} }
+        
     ],
 
 };
