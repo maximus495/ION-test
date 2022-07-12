@@ -19,7 +19,7 @@ const transactions = async (req, res, next) =>{
     const userTransaction = await store.query('transaction',name);
     const violations = [];
 
-    if(!user)
+    if(!user[0])
         return res.status(400).json({account: "",violations: ['account-not-initialized']});
     
     if(!user[0].account['active-card']) // No se debe aceptar ninguna transacción cuando la tarjeta no está activa: inactive-card
