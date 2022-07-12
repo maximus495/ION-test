@@ -1,12 +1,12 @@
 const store = require('../store/dummy')
 
 const accounts = async (req, res, next) =>{
-    const {name, account} = req.body;
+    const {name} = req.body;
     const data = await store.query('user',name)
 
     if (data[0]) {
         return res.status(400).json({ 
-            account,
+            account: data[0].account,
             violations: ["account-already-initialized"]});
     }
     next();
